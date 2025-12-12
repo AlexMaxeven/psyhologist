@@ -27,17 +27,17 @@
 
 .pageTitle {
   font-size: 3rem;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cause', sans-serif;
   color: #ffffff;
   margin-bottom: 1rem;
-  font-weight: 700;
+  font-weight: 800;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
   letter-spacing: -0.02em;
   transition: color 0.3s ease;
 }
 
 [data-theme='light'] .pageTitle {
-  color: #1a1a1a;
+  color: #000000;
   text-shadow: none;
 }
 
@@ -50,7 +50,7 @@
 }
 
 [data-theme='light'] .pageSubtitle {
-  color: #4a4a4a;
+  color: #000000;
 }
 
 /* Content Section */
@@ -133,17 +133,17 @@
 }
 
 .introCard h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cause', sans-serif;
   color: #ffffff;
   font-size: 2rem;
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.01em;
   transition: color 0.3s ease;
 }
 
 [data-theme='light'] .introCard h2 {
-  color: #1a1a1a;
+  color: #000000;
 }
 
 .introCard p {
@@ -156,7 +156,7 @@
 }
 
 [data-theme='light'] .introCard p {
-  color: #4a4a4a;
+  color: #000000;
   opacity: 1;
 }
 
@@ -214,17 +214,17 @@
 }
 
 .featureCard h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cause', sans-serif;
   color: #ffffff;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.01em;
   transition: color 0.3s ease;
 }
 
 [data-theme='light'] .featureCard h3 {
-  color: #1a1a1a;
+  color: #000000;
 }
 
 .featureCard p {
@@ -235,7 +235,7 @@
 }
 
 [data-theme='light'] .featureCard p {
-  color: #4a4a4a;
+  color: #000000;
   opacity: 1;
 }
 
@@ -285,21 +285,9 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .pageTitle {
-    font-size: 2rem;
-  }
-
-  .pageSubtitle {
-    font-size: 1.2rem;
-  }
-
-  .introCard {
-    padding: 1.5rem;
-  }
-
-  .featuresGrid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .page {
+    padding-top: 70px;
+    padding-bottom: 1rem;
   }
 
   .pageContent {
@@ -307,7 +295,61 @@
   }
 
   .heroSection {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .pageTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .pageSubtitle {
+    font-size: 0.9rem;
+  }
+
+  .contentSection {
+    margin-top: 1rem;
+  }
+
+  .introCard {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .introCard h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0;
+  }
+
+  .introCard p {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .featureCard {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .featureCard h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0;
+  }
+
+  .featureCard p {
+    font-size: 0.75rem;
+    line-height: 1.5;
   }
 }
 

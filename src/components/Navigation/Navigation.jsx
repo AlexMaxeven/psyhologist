@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
+import TextType from '../TextType/TextType'
 import styles from './Navigation.module.css'
 
 function Navigation() {
@@ -28,7 +29,16 @@ function Navigation() {
     <nav className={styles.navigation}>
       <div className={styles.navContainer}>
         <Link to="/" className={styles.navLogo}>
-          <span className={styles.logoText}>Гештальт</span>
+          <TextType
+            text={['Гештальт']}
+            as="span"
+            typingSpeed={100}
+            pauseDuration={0}
+            loop={false}
+            showCursor={false}
+            className={styles.logoText}
+            initialDelay={300}
+          />
         </Link>
 
         <div className={styles.navRight}>

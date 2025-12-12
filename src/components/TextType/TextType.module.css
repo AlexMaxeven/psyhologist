@@ -1,0 +1,19 @@
+.textType {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+.content {
+  display: inline;
+}
+
+.cursor {
+  margin-left: 0.25rem;
+  display: inline-block;
+  opacity: 1;
+}
+
+.cursorHidden {
+  display: none;
+}
+

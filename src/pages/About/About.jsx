@@ -16,7 +16,7 @@ function About() {
       />
       <div className={styles.pageContent} ref={gridRef}>
         <div className={styles.heroSection}>
-          <h1 className={`${styles.pageTitle} ${styles.animateFadeIn}`}>
+          <h1 className={styles.pageTitle}>
             Про гештальт-терапію
           </h1>
           <p className={`${styles.pageSubtitle} ${styles.animateFadeInDelay}`}>

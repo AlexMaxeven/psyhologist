@@ -1,6 +1,6 @@
 .navigation {
-  background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
   box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
   position: fixed;
   top: 0;
@@ -13,7 +13,7 @@
 }
 
 [data-theme='light'] .navigation {
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 }
@@ -262,14 +262,14 @@
   display: none;
   max-height: 0;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
   transition: max-height 0.4s ease, padding 0.4s ease;
   box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 
 [data-theme='light'] .mobileMenu {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.4);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 

@@ -5,7 +5,7 @@ import Home from './pages/Home/Home'
 import About from './pages/About/About'
 import Therapy from './pages/Therapy/Therapy'
 import Beams from './components/Beams/Beams'
-import LightPillar from './components/LightPillar/LightPillar'
+import Plasma from './components/Plasma/Plasma'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton'
 import './App.css'
@@ -31,18 +31,13 @@ function AppContent() {
             />
           </div>
           <div className={`backgroundLayer ${!isDark ? 'active' : ''}`}>
-            <LightPillar
-              topColor="#5227FF"
-              bottomColor="#FF9FFC"
-              intensity={1.2}
-              rotationSpeed={0.3}
-              glowAmount={0.01}
-              pillarWidth={3.0}
-              pillarHeight={0.4}
-              noiseIntensity={0.5}
-              pillarRotation={0}
-              interactive={false}
-              mixBlendMode="screen"
+            <Plasma
+              color="#ff6b35"
+              speed={0.6}
+              direction="forward"
+              scale={1.1}
+              opacity={0.8}
+              mouseInteractive={true}
             />
           </div>
         </div>
