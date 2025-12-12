@@ -34,15 +34,15 @@ function AppContent() {
             <LightPillar
               topColor="#5227FF"
               bottomColor="#FF9FFC"
-              intensity={0.6}
+              intensity={1.2}
               rotationSpeed={0.3}
-              glowAmount={0.005}
+              glowAmount={0.01}
               pillarWidth={3.0}
               pillarHeight={0.4}
               noiseIntensity={0.5}
               pillarRotation={0}
               interactive={false}
-              mixBlendMode="normal"
+              mixBlendMode="screen"
             />
           </div>
         </div>
