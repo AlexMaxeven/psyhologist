@@ -1,10 +1,17 @@
 import { ParticleCard } from '../../components/MagicBento/MagicBento'
 import { GlobalSpotlight } from '../../components/MagicBento/GlobalSpotlight'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import styles from './Home.module.css'
 
 function Home() {
   const gridRef = useRef(null);
+
+  useEffect(() => {
+    // Переконаємося, що gridRef встановлений
+    if (gridRef.current) {
+      gridRef.current.style.display = 'block';
+    }
+  }, []);
 
   return (
     <div className={styles.page}>

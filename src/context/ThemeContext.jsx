@@ -13,7 +13,12 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('theme')
-    return saved ? saved === 'dark' : true
+    const initialTheme = saved ? saved === 'dark' : true
+    // Встановлюємо атрибут синхронно перед рендером
+    if (typeof document !== 'undefined') {
+      document.documentElement.setAttribute('data-theme', initialTheme ? 'dark' : 'light')
+    }
+    return initialTheme
   })
 
   useEffect(() => {

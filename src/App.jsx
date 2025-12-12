@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { ThemeProvider, useTheme } from './context/ThemeContext'
 import Navigation from './components/Navigation/Navigation'
 import Home from './pages/Home/Home'
@@ -48,9 +48,11 @@ function AppContent() {
         </div>
         <Navigation />
         <Routes>
+          <Route index element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/therapy" element={<Therapy />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <ScrollToTopButton />
       </div>

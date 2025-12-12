@@ -1,16 +1,56 @@
-# React + Vite
+# Гештальт-психологія
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Сучасний веб-сайт про гештальт-терапію з інтерактивним дизайном та анімаціями.
 
-Currently, two official plugins are available:
+## Опис
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Сайт присвячений гештальт-психології та гештальт-терапії. Містить інформацію про підхід, принципи та методи терапії. Реалізовано з використанням сучасних технологій та інтерактивних елементів.
 
-## React Compiler
+## Технології
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** - UI бібліотека
+- **Vite** - збірщик та dev сервер
+- **React Router DOM** - маршрутизація
+- **Three.js** - 3D графіка для анімованих фонів
+- **GSAP** - анімації
+- **CSS Modules** - модульні стилі
 
-## Expanding the ESLint configuration
+## Особливості
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🌓 **Світла/темна тема** - перемикач з плавними переходами
+- ✨ **Інтерактивні картки** - анімації при hover (tilt, magnetism, particles)
+- 🎨 **Динамічне світіння бордерів** - ефект spotlight, що слідує за курсором
+- 📱 **Адаптивний дизайн** - мобільне меню та responsive layout
+- 🎭 **Анімовані фони** - Beams (темна тема) та LightPillar (світла тема)
+- ⬆️ **Scroll to top** - кнопка для повернення вгору
+
+## Структура
+
+```
+psyhologist/
+├── src/
+│   ├── components/     # Переісні компоненти
+│   ├── pages/          # Сторінки сайту
+│   ├── context/        # React Context (Theme)
+│   └── App.jsx         # Головний компонент
+└── public/             # Статичні файли
+```
+
+## Запуск
+
+```bash
+npm install
+npm run dev
+```
+
+## Збірка
+
+```bash
+npm run build
+```
+
+## Сторінки
+
+- **Головна** (`/`) - вступ та основна інформація
+- **Про гештальт** (`/about`) - детальна інформація про підхід
+- **Терапія** (`/therapy`) - методи та техніки терапії

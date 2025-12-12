@@ -7,6 +7,9 @@ function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
   const { isDark, toggleTheme } = useTheme()
+  
+  // Перевірка чи це головна сторінка
+  const isHome = location.pathname === '/' || location.pathname === ''
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -60,7 +63,10 @@ function Navigation() {
           {/* Desktop Navigation */}
           <ul className={`${styles.navMenu} ${styles.desktopMenu}`}>
             <li>
-              <Link to="/" className={location.pathname === '/' ? styles.active : ''}>
+              <Link 
+                to="/" 
+                className={isHome ? styles.active : ''}
+              >
                 Головна
               </Link>
             </li>
@@ -101,7 +107,7 @@ function Navigation() {
           <li>
             <Link 
               to="/" 
-              className={location.pathname === '/' ? styles.active : ''}
+              className={isHome ? styles.active : ''}
               onClick={closeMenu}
             >
               Головна
