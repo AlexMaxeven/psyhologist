@@ -1,0 +1,95 @@
+:root {
+  --glow-color: 0, 255, 136;
+  --border-color: rgba(0, 255, 136, 0.3);
+  --background-dark: rgba(0, 0, 0, 0.6);
+}
+
+.particleContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.particle::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(0, 255, 136, 0.2);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.particleContainer:hover {
+  box-shadow: 0 4px 20px rgba(0, 255, 136, 0.2), 0 0 30px rgba(0, 255, 136, 0.1);
+}
+
+.borderGlow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 6px;
+  background: radial-gradient(
+    var(--glow-radius, 200px) circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(0, 255, 136, calc(var(--glow-intensity, 0) * 0.8)) 0%,
+    rgba(0, 255, 136, calc(var(--glow-intensity, 0) * 0.4)) 30%,
+    transparent 60%
+  );
+  border-radius: inherit;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.borderGlow:hover::after {
+  opacity: 1;
+}
+
+.borderGlow:hover {
+  box-shadow:
+    0 4px 20px rgba(0, 255, 136, 0.4),
+    0 0 30px rgba(0, 255, 136, 0.2);
+}
+
+[data-theme='light'] .borderGlow::after {
+  background: radial-gradient(
+    var(--glow-radius, 200px) circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(0, 0, 0, calc(var(--glow-intensity, 0) * 0.3)) 0%,
+    rgba(0, 0, 0, calc(var(--glow-intensity, 0) * 0.15)) 30%,
+    transparent 60%
+  );
+}
+
+[data-theme='light'] .borderGlow:hover {
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.2),
+    0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Global spotlight styles */
+:global(.global-spotlight) {
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+  z-index: 200 !important;
+  pointer-events: none;
+}
+
