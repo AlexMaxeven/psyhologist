@@ -8,8 +8,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>Гештальт-психологія</title>
-    <script type="module" crossorigin src="/psyhologist/assets/index-C6dYOxIM.js"></script>
-    <link rel="stylesheet" crossorigin href="/psyhologist/assets/index-D2Ogr5ux.css">
+    <script>
+      // Встановлюємо тему синхронно перед завантаженням React
+      (function() {
+        const saved = localStorage.getItem('theme');
+        const theme = saved ? saved : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    <script type="module" crossorigin src="/psyhologist/assets/index-CaZZldVD.js"></script>
+    <link rel="stylesheet" crossorigin href="/psyhologist/assets/index-UZ61MfDb.css">
   </head>
   <body>
     <div id="root"></div>
