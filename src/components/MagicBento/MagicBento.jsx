@@ -12,11 +12,11 @@ const createParticleElement = (x, y, color = DEFAULT_GLOW_COLOR) => {
   el.className = styles.particle;
   el.style.cssText = `
     position: absolute;
-    width: 4px;
-    height: 4px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
     background: rgba(${color}, 1);
-    box-shadow: 0 0 6px rgba(${color}, 0.6);
+    box-shadow: 0 0 12px rgba(${color}, 1), 0 0 20px rgba(${color}, 0.8), 0 0 30px rgba(${color}, 0.6);
     pointer-events: none;
     z-index: 100;
     left: ${x}px;

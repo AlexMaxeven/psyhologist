@@ -63,6 +63,8 @@
   box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 255, 136, 0.3);
+  cursor: pointer;
+  user-select: none;
   --glow-x: 50%;
   --glow-y: 50%;
   --glow-intensity: 0;
@@ -115,7 +117,7 @@
 [data-theme='light'] .infoCard {
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  border: none;
+  border: 1px solid rgba(255, 140, 66, 0.3);
   position: relative;
 }
 
@@ -191,7 +193,7 @@
 
 [data-theme='light'] .benefitsList li {
   background: rgba(255, 255, 255, 0.6);
-  border-left: 4px solid #000000;
+  border-left: 4px solid rgba(255, 140, 66, 0.5);
   color: #000000;
 }
 
@@ -204,7 +206,8 @@
 
 [data-theme='light'] .benefitsList li:hover {
   background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(255, 140, 66, 0.2);
+  border-left-color: #ff8c42;
 }
 
 /* Techniques Grid */
@@ -225,7 +228,7 @@
 
 [data-theme='light'] .techniqueItem {
   background: rgba(255, 255, 255, 0.6);
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 140, 66, 0.3);
 }
 
 .techniqueItem:hover {

@@ -1,10 +1,13 @@
 import { ParticleCard } from '../../components/MagicBento/MagicBento'
 import { GlobalSpotlight } from '../../components/MagicBento/GlobalSpotlight'
 import { useRef } from 'react'
+import { useTheme } from '../../context/ThemeContext'
 import styles from './Therapy.module.css'
 
 function Therapy() {
   const gridRef = useRef(null);
+  const { isDark } = useTheme();
+  const glowColor = isDark ? "0, 255, 136" : "255, 140, 66";
 
   return (
     <div className={styles.page}>
@@ -12,7 +15,7 @@ function Therapy() {
         gridRef={gridRef}
         enabled={true}
         spotlightRadius={300}
-        glowColor="0, 255, 136"
+        glowColor={glowColor}
       />
       <div className={styles.pageContent} ref={gridRef}>
         <div className={styles.heroSection}>
@@ -28,7 +31,7 @@ function Therapy() {
           <ParticleCard
             className={`${styles.infoCard} ${styles.borderGlow}`}
             particleCount={12}
-            glowColor="0, 255, 136"
+            glowColor={glowColor}
             enableTilt={true}
             clickEffect={true}
             enableMagnetism={true}
@@ -44,7 +47,7 @@ function Therapy() {
           <ParticleCard
             className={`${styles.infoCard} ${styles.borderGlow}`}
             particleCount={12}
-            glowColor="0, 255, 136"
+            glowColor={glowColor}
             enableTilt={true}
             clickEffect={true}
             enableMagnetism={true}
@@ -73,7 +76,7 @@ function Therapy() {
           <ParticleCard
             className={`${styles.infoCard} ${styles.borderGlow}`}
             particleCount={12}
-            glowColor="0, 255, 136"
+            glowColor={glowColor}
             enableTilt={true}
             clickEffect={true}
             enableMagnetism={true}

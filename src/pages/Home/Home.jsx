@@ -1,10 +1,13 @@
 import { ParticleCard } from '../../components/MagicBento/MagicBento'
 import { GlobalSpotlight } from '../../components/MagicBento/GlobalSpotlight'
 import { useRef, useEffect } from 'react'
+import { useTheme } from '../../context/ThemeContext'
 import styles from './Home.module.css'
 
 function Home() {
   const gridRef = useRef(null);
+  const { isDark } = useTheme();
+  const glowColor = isDark ? "0, 255, 136" : "255, 140, 66";
 
   useEffect(() => {
     // Переконаємося, що gridRef встановлений
@@ -19,7 +22,7 @@ function Home() {
         gridRef={gridRef}
         enabled={true}
         spotlightRadius={300}
-        glowColor="0, 255, 136"
+        glowColor={glowColor}
       />
       <div className={styles.pageContent} ref={gridRef}>
         <div className={styles.heroSection}>
@@ -35,7 +38,7 @@ function Home() {
           <ParticleCard
             className={`${styles.introCard} ${styles.borderGlow}`}
             particleCount={12}
-            glowColor="0, 255, 136"
+            glowColor={glowColor}
             enableTilt={true}
             clickEffect={true}
             enableMagnetism={true}
@@ -52,7 +55,7 @@ function Home() {
             <ParticleCard
               className={`${styles.featureCard} ${styles.borderGlow}`}
               particleCount={8}
-              glowColor="0, 255, 136"
+              glowColor={glowColor}
               enableTilt={true}
               clickEffect={true}
               enableMagnetism={true}
@@ -64,7 +67,7 @@ function Home() {
             <ParticleCard
               className={`${styles.featureCard} ${styles.borderGlow}`}
               particleCount={8}
-              glowColor="0, 255, 136"
+              glowColor={glowColor}
               enableTilt={true}
               clickEffect={true}
               enableMagnetism={true}
@@ -76,7 +79,7 @@ function Home() {
             <ParticleCard
               className={`${styles.featureCard} ${styles.borderGlow}`}
               particleCount={8}
-              glowColor="0, 255, 136"
+              glowColor={glowColor}
               enableTilt={true}
               clickEffect={true}
               enableMagnetism={true}
