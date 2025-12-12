@@ -20,29 +20,29 @@ function AppContent() {
         <div className="backgroundWrapper">
           {isDark && (
             <div className="backgroundLayer active">
-              <Beams
-                beamWidth={2}
-                beamHeight={15}
-                beamNumber={12}
-                lightColor="#ffffff"
-                speed={2}
-                noiseIntensity={1.75}
-                scale={0.2}
-                rotation={0}
-              />
-            </div>
+            <Beams
+              beamWidth={2}
+              beamHeight={15}
+              beamNumber={12}
+              lightColor="#ffffff"
+              speed={2}
+              noiseIntensity={1.75}
+              scale={0.2}
+              rotation={0}
+            />
+          </div>
           )}
           {!isDark && (
             <div className="backgroundLayer active">
-              <Plasma
-                color="#ff6b35"
-                speed={0.6}
-                direction="forward"
-                scale={1.1}
-                opacity={0.8}
-                mouseInteractive={true}
-              />
-            </div>
+            <Plasma
+              color="#ff6b35"
+              speed={0.6}
+              direction="forward"
+              scale={1.1}
+              opacity={0.8}
+              mouseInteractive={true}
+            />
+          </div>
           )}
         </div>
         <Navigation />
