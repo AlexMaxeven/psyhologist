@@ -106,8 +106,8 @@
 [data-theme='light'] .borderGlow::after {
   background: radial-gradient(
     var(--glow-radius, 200px) circle at var(--glow-x, 50%) var(--glow-y, 50%),
-    rgba(0, 0, 0, calc(var(--glow-intensity, 0) * 0.3)) 0%,
-    rgba(0, 0, 0, calc(var(--glow-intensity, 0) * 0.15)) 30%,
+    rgba(255, 140, 66, calc(var(--glow-intensity, 0) * 0.6)) 0%,
+    rgba(255, 179, 102, calc(var(--glow-intensity, 0) * 0.4)) 30%,
     transparent 60%
   );
 }
@@ -115,7 +115,24 @@
 [data-theme='light'] .infoCard {
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: none;
+  position: relative;
+}
+
+[data-theme='light'] .infoCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(135deg, #ff8c42, #ffb366, #ffd9b3, #ffe6cc, #ffb366, #ff8c42);
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .infoCard:hover {
@@ -174,7 +191,7 @@
 
 [data-theme='light'] .principlesList li {
   background: rgba(255, 255, 255, 0.6);
-  border-left: 4px solid #000000;
+  border-left: 4px solid rgba(255, 140, 66, 0.5);
   color: #000000;
 }
 
@@ -187,7 +204,8 @@
 
 [data-theme='light'] .principlesList li:hover {
   background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(255, 140, 66, 0.2);
+  border-left-color: #ff8c42;
 }
 
 .principlesList li strong {
@@ -220,6 +238,18 @@
   }
 }
 
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .animateFadeIn {
   animation: fadeIn 0.8s ease-in;
 }
@@ -238,7 +268,7 @@
 @media (max-width: 768px) {
   .page {
     padding-top: 70px;
-    padding-bottom: 1rem;
+    padding-bottom: 100px;
   }
 
   .pageContent {
