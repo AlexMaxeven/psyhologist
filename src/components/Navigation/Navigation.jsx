@@ -25,6 +25,58 @@ function Navigation() {
     closeMenu()
   }, [location])
 
+  // Додаємо/прибираємо blur ефект та блокуємо скрол для сторінки
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('menu-open')
+      // Блокуємо скрол
+      const scrollY = window.scrollY
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${scrollY}px`
+      document.body.style.width = '100%'
+    } else {
+      document.body.classList.remove('menu-open')
+      // Відновлюємо скрол
+      const scrollY = document.body.style.top
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1)
+      }
+    }
+    return () => {
+      document.body.classList.remove('menu-open')
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+    }
+  }, [isMenuOpen])
+
+  // Закриваємо меню при кліку поза ним
+  useEffect(() => {
+    if (!isMenuOpen) return
+
+    const handleClickOutside = (e) => {
+      const nav = e.target.closest(`.${styles.navigation}`)
+      if (!nav) {
+        closeMenu()
+      }
+    }
+
+    // Додаємо обробник з невеликою затримкою, щоб не спрацював одразу при відкритті
+    const timeoutId = setTimeout(() => {
+      document.addEventListener('click', handleClickOutside)
+      document.addEventListener('touchstart', handleClickOutside)
+    }, 100)
+
+    return () => {
+      clearTimeout(timeoutId)
+      document.removeEventListener('click', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+    }
+  }, [isMenuOpen])
+
   return (
     <>
       {/* Theme Toggle - Fixed position for all screens */}

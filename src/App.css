@@ -53,3 +53,46 @@
   z-index: 200 !important;
   pointer-events: none;
 }
+
+/* Blur ефект для сторінки коли меню відкрито на мобільних */
+@media (max-width: 768px) {
+  body.menu-open .App {
+    overflow: hidden;
+  }
+
+  /* Blur тільки для backgroundWrapper */
+  body.menu-open .App .backgroundWrapper {
+    filter: blur(8px);
+    transition: filter 0.3s ease;
+  }
+
+  /* Blur для контенту сторінок */
+  body.menu-open .App .page,
+  body.menu-open .App [class*="page"] {
+    filter: blur(8px);
+    transition: filter 0.3s ease;
+    pointer-events: none;
+  }
+
+  /* Blur для ScrollToTopButton */
+  body.menu-open .App button[class*="scrollButton"] {
+    filter: blur(8px);
+    transition: filter 0.3s ease;
+    pointer-events: none;
+  }
+
+  /* Навігація та всі її дочірні елементи - завжди без blur */
+  body.menu-open .navigation {
+    filter: none !important;
+    pointer-events: auto !important;
+    z-index: 1002;
+    isolation: isolate;
+    position: relative;
+  }
+
+  body.menu-open .navigation *,
+  body.menu-open .navigation *::before,
+  body.menu-open .navigation *::after {
+    filter: none !important;
+  }
+}

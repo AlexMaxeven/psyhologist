@@ -40,7 +40,7 @@ function AppContent() {
               direction="forward"
               scale={1.1}
               opacity={0.8}
-              mouseInteractive={true}
+              mouseInteractive={typeof window !== 'undefined' && window.innerWidth > 768}
             />
           </div>
           )}

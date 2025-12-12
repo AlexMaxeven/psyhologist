@@ -140,8 +140,9 @@ export const Plasma = ({
       mouseUniform[1] = mousePos.current.y;
     };
 
+    // Додаємо тільки mousemove, не додаємо touch події для уникнення проблем на мобільних
     if (mouseInteractive) {
-      containerEl.addEventListener('mousemove', handleMouseMove);
+      containerEl.addEventListener('mousemove', handleMouseMove, { passive: true });
     }
 
     const setSize = () => {
