@@ -49,7 +49,7 @@ function extendMaterial(BaseMaterial, cfg) {
 }
 
 const CanvasWrapper = ({ children }) => (
-  <Canvas dpr={[1, 2]} frameloop="always" className={styles.beamsContainer}>
+  <Canvas dpr={[1, 2]} frameloop="demand" className={styles.beamsContainer}>
     {children}
   </Canvas>
 );
@@ -282,12 +282,15 @@ const MergedPlanes = forwardRef(({ material, width, count, height }, ref) => {
   useImperativeHandle(ref, () => mesh.current);
 
   const geometry = useMemo(
-    () => createStackedPlanesBufferGeometry(count, width, height, 0, 100),
+    () => createStackedPlanesBufferGeometry(count, width, height, 0, 50),
     [count, width, height]
   );
 
-  useFrame((_, delta) => {
-    mesh.current.material.uniforms.time.value += 0.1 * delta;
+  useFrame((state, delta) => {
+    if (mesh.current && mesh.current.material) {
+      mesh.current.material.uniforms.time.value += 0.1 * delta;
+      state.invalidate();
+    }
   });
 
   return <mesh ref={mesh} geometry={geometry} material={material} />;
